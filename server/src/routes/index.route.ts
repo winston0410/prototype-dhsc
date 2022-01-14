@@ -33,6 +33,8 @@ export default function indexRoute(server, options, next) {
     try {
       const body: IRequest = req.body;
 
+      // TODO Validate body
+
       const maximoReqBody: IMaximoServiceRequest = {
         reportedbyname: body.name,
         reportedemail: body.email,
