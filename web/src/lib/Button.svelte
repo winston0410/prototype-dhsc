@@ -4,7 +4,7 @@
 </script>
 
 <script lang="ts">
-	export let href: string;
+	export let href: string | null = null;
 </script>
 
 {#if href}

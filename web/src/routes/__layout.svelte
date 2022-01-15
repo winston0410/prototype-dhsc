@@ -20,11 +20,18 @@
 
     :global(body){
         font-family: "Karla";
+        color: $black;
+    }
+
+    :global(button){
+        appearance: none;
+        padding: 0;
+        margin: 0;
     }
         
     .govuk__header{
         background: #005EB8;
-        color: #FFFFFF;
+        color: $white;
         display: flex;
         align-items: center;
         padding: 16px;
@@ -40,6 +47,6 @@
     .govuk__shell{
         background: #F0F4F5;
         padding: 16px;
-        height: calc(100vh - $headerHeight);
+        min-height: calc(100vh - $headerHeight);
     }
 </style>
