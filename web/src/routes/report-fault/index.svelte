@@ -44,7 +44,7 @@
 
 <Separator size={20} />
 
-<Button href="/report-fault/step1">Report a fault</Button>
+<Button href="/report-fault/check-location-id">Report a fault</Button>
 
 <style lang="scss">
 	.govuk__warning {

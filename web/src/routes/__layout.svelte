@@ -17,16 +17,19 @@
 
 <style lang="scss">
     $headerHeight: 82px;
-
     :global(body){
         font-family: "Karla";
         color: $black;
     }
-
     :global(button){
         appearance: none;
         padding: 0;
         margin: 0;
+    }
+        
+    :global(input, textarea){
+        appearance: none;
+        outline: none;
     }
         
     .govuk__header{
@@ -38,12 +41,10 @@
         height: $headerHeight;
         max-height: $headerHeight;
     }
-
     .govuk__header__title{
         margin-left: 12px;
         font-weight: 700;
     }
-        
     .govuk__shell{
         background: #F0F4F5;
         padding: 16px;

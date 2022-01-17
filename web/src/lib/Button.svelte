@@ -39,5 +39,7 @@
 		border-radius: 5px;
 		background-color: #007f3b;
 		transform: translateY(-4px);
+        min-width: 100px;
+        text-align: center;
 	}
 </style>
