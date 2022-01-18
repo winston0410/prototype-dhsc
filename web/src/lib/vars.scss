@@ -1,2 +1,16 @@
 $white: #FFFFFF;
 $black: hsla(205, 20%, 16%, 1);
+$green: #007f3b;
+$tint_black: hsla(206, 20%, 34%, 1);
+$disabled: hsla(205, 20%, 32%, 1);
+$headerHeight: 82px;
+
+.govuk__text{
+    color: $black;
+    font-size: 1rem;
+}
+
+.govuk__remarks{
+    color: $tint_black;
+    font-size: 1rem;
+}

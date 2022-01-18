@@ -16,7 +16,10 @@
 </div>
 
 <style lang="scss">
-    $headerHeight: 82px;
+    :global(html){
+        font-size: 16px;
+    }
+        
     :global(body){
         font-family: "Karla";
         color: $black;
