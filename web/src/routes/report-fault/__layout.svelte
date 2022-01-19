@@ -6,6 +6,4 @@
 <script lang="ts">
 </script>
 
-<Modal>
-    <slot />
-</Modal>
+<slot />

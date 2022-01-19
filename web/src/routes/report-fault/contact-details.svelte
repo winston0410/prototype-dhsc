@@ -37,7 +37,7 @@
 <Separator size={30} />
 
 <Button
-	href="./summary"
+	href="./fault-report-summary"
 	disabled={$errors['name'] !== '' || $errors['email'] !== '' || $errors['phone'] !== ''}
 	>Next</Button
 >

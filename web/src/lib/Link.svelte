@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
-      import { getContext } from 'svelte';
+      //  import { getContext } from 'svelte';
       import FindLocationId from './modal/FindLocationId.svelte';
-      const { open } = getContext('simple-modal');
+      //  const { open } = getContext('simple-modal');
 </script>
 
 <script lang="ts">
@@ -9,12 +9,12 @@
 	export let isExternal = true;
 	export let modalName = '';
 
-	const handleClick = (e) => {
-        open(FindLocationId, {})
-    };
+	//  const handleClick = (e) => {
+        //  open(FindLocationId, {})
+    //  };
 </script>
 
-{#if href !== ""}
+<!--  {#if href !== ""}  -->
 <a
 	class="govuk__link"
 	{href}
@@ -24,17 +24,17 @@
 		<slot />
 	</span>
 </a>
-{:else}
-<button
-	class="govuk__link"
-    type="button"
-	on:click|preventDefault={handleClick}
->
-	<span>
-		<slot />
-	</span>
-</button>
-{/if}
+<!--  {:else}  -->
+<!--  <button  -->
+	<!--  class="govuk__link"  -->
+    <!--  type="button"  -->
+	<!--  on:click|preventDefault={handleClick}  -->
+<!--  >  -->
+	<!--  <span>  -->
+		<!--  <slot />  -->
+	<!--  </span>  -->
+<!--  </button>  -->
+<!--  {/if}  -->
 
 <style lang="scss">
 	.govuk__link {

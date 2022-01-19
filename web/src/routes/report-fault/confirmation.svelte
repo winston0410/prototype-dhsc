@@ -16,9 +16,9 @@
 <Separator size={20} />
 <p>A copy of your report has been sent to martin@mysociety.org</p>
 <Separator size={30} />
-<Button>Request a service in the same place</Button>
+<Button href="./request-service">Request a service in the same place</Button>
 <Separator size={30} />
-<Button>Make another report</Button>
+<Button href="./">Make another report</Button>
 <Separator size={30} />
 <Button href="./debug">Debug JSON output</Button>
 <Separator size={60} />
