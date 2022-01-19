@@ -21,10 +21,18 @@
 
 <div>
 	<h2>Data collected from form</h2>
-	<span>{result}</span>
+	<span class="json-output">{result}</span>
 </div>
 
 <div>
 	<h2>Data transformed for request to Maximo</h2>
-	<span>{JSON.stringify(toMaximo($form))}</span>
+	<span class="json-output">{JSON.stringify(toMaximo($form))}</span>
 </div>
+
+<style lang="scss">
+    .json-output{
+        display: block;
+        width: 100%;
+        padding: 20px;
+    }
+</style>

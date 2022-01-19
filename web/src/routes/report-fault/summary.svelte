@@ -4,6 +4,7 @@
 	import Separator from '$lib/Separator.svelte';
 	import { errors, handleSubmit, validateFields, form } from '$lib/form';
 	import { onMount } from 'svelte';
+    import dummy from '$lib/dummy'
 </script>
 
 <script lang="ts">
@@ -17,6 +18,13 @@
 			'asset_id'
 		]);
 	});
+
+    const getLabelById = (id: string) => {
+        // TODO Handle error/ redirect when the form is not completed
+        if(!id) return
+        const item = dummy.find(x => x.id === id)
+        return item.label
+    }
 </script>
 
 <!-- TODO Make the following fields dynamic with $form  -->
@@ -24,7 +32,7 @@
 
 <Separator size={12} />
 
-<SummaryField name={"Site"} value={"abc"} href={"./fill-location-id"}/>
+<SummaryField name={"Site"} value={getLabelById($form["location_id"])} href={"./fill-location-id"}/>
 
 <Separator size={12} />
 

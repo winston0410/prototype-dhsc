@@ -6,6 +6,7 @@
 <script lang="ts">
 	export let type: string;
 	export let name: string;
+    export let value = null;
 	// TODO Fix typing later
 </script>
 
@@ -36,6 +37,21 @@
 			accept="image/png, image/jpeg"
 			bind:value={$form[name]}
 			type="file"
+			{name}
+			on:input
+			on:change
+			on:input={handleChange}
+		/>
+	</label>
+{:else if type === 'number'}
+	<label>
+		<span class="govuk__label">
+			<slot />
+		</span>
+		<input
+			class="govuk__input"
+			bind:value={$form[name]}
+			type="number"
 			{name}
 			on:input
 			on:change
@@ -79,6 +95,8 @@
 				<slot />
 			</span>
 		</span>
+        <!--  FIXME how to use multi bind:value?  -->
+        <!--  on:input={handleChange}  -->
 		<div class="govuk__checkbox">
 			<input
 				class="govuk__checkbox__inner"
@@ -86,8 +104,7 @@
 				{name}
 				on:input
 				on:change
-				on:input={handleChange}
-				bind:value={$form[name]}
+				bind:value={value}
 			/>
 			<span class="govuk__checkbox__tick" />
 		</div>
@@ -109,16 +126,6 @@
 {/if}
 
 <style lang="scss">
-	@mixin input-field {
-		display: block;
-		border: 2px solid $black;
-		background: $white;
-	}
-
-	.govuk__label {
-		display: block;
-	}
-
 	.govuk__checkbox__label {
 		margin-left: 12px;
 	}

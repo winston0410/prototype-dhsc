@@ -23,4 +23,4 @@
 
 <Separator size={35}/>
 
-<Button href="/">No</Button>
+<Button href="./search-location-id">No</Button>

@@ -8,7 +8,9 @@
 </script>
 
 <header class="govuk__header">
-    <Logo />
+    <a href="/">
+        <Logo />
+    </a>
     <span class="govuk__header__title">Report a fault</span>
 </header>
 <div class="govuk__shell">

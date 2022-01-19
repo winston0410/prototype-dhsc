@@ -11,6 +11,7 @@ export const { form, state, handleChange, handleSubmit, errors, validateField } 
 	initialValues: {
 		'location_id': '',
 		'restricted-location': false,
+		'restricted_access_description': "",
         'description': "",
         'name': "",
         'email': "",
@@ -24,7 +25,8 @@ export const { form, state, handleChange, handleSubmit, errors, validateField } 
 		email: yup.string().email().required(),
 		phone: yup.string().matches(phoneRegExp, 'Phone number is not valid').required(),
 		description: yup.string().required(),
-		'location_id': yup.string().required()
+		'location_id': yup.string().required(),
+		'restricted_access_description': yup.string().optional(),
 	}),
 	onSubmit: (values) => {
         //  console.log('submitting', values)
