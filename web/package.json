@@ -33,6 +33,7 @@
     "@fontsource/karla": "^4.5.0",
     "modern-css-reset": "^1.4.0",
     "svelte-forms-lib": "^2.0.1",
+    "svelte-select": "^4.4.7",
     "svelte-use-local-storage": "github:winston0410/svelte-use-local-storage",
     "yup": "^0.32.11"
   }
