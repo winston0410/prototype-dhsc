@@ -4,7 +4,7 @@
 	import Separator from '$lib/Separator.svelte';
 	import { errors, handleSubmit, validateFields, form } from '$lib/form';
 	import { onMount } from 'svelte';
-    import dummy from '$lib/dummy'
+    import dummySiteData from '$lib/dummy'
 </script>
 
 <script lang="ts">
@@ -13,16 +13,19 @@
 			'name',
 			'email',
 			'phone',
+            'photo',
 			'location_id',
 			'description',
 			'asset_id'
 		]);
+
+        console.log($errors)
 	});
 
-    const getLabelById = (id: string) => {
+    const getLabelById = (id: string, data) => {
         // TODO Handle error/ redirect when the form is not completed
-        if(!id) return
-        const item = dummy.find(x => x.id === id)
+        if(!id) return ""
+        const item = data.find(x => x.value === id)
         return item.label
     }
 </script>
@@ -32,7 +35,7 @@
 
 <Separator size={12} />
 
-<SummaryField name={"Site"} value={getLabelById($form["location_id"])} href={"./fill-location-id"}/>
+<SummaryField name={"Site"} value={getLabelById($form["location_id"], dummySiteData)} href={"./fill-location-id"}/>
 
 <Separator size={12} />
 

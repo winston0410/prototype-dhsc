@@ -12,9 +12,7 @@
 <p>Do you know the location ID?</p>
 
 <p>
-	A way of uniquely identifying a location in your trust, sometimes called a PFI number. Help <Link
-		href="">finding location IDs</Link
-	>
+	A way of uniquely identifying a location in your trust, sometimes called a PFI number. Help <Link>finding location IDs</Link>
 </p>
 
 <Separator size={40}/>

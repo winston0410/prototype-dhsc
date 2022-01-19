@@ -3,23 +3,27 @@
 	import InputField from '$lib/InputField.svelte';
 	import SelectField from '$lib/SelectField.svelte';
 	import Separator from '$lib/Separator.svelte';
-	import { errors, validateFields } from '$lib/form';
+	import { form, errors, validateFields } from '$lib/form';
 	import { onMount } from 'svelte';
+    import { dummyBuildingData } from '$lib/dummy'
 </script>
 
 <script lang="ts">
 	onMount(async () => {
 		await validateFields(['building_id']);
 	});
-
-    let shouldRemember = false;
 </script>
 
 <h1>Fault location – building</h1>
 
 <Separator size={40} />
 
-<SelectField items={[{ value: '', label: 'check' }]} placeholder={'Choose a building'}>
+<SelectField
+	items={dummyBuildingData}
+	placeholder={'Choose a building'}
+	name={'building_id'}
+    {form}
+>
 	Building
 </SelectField>
 
@@ -33,5 +37,5 @@
 
 <Separator size={40} />
 
-<Button href="./describe-fault" disabled={false}>Next</Button>
-<!--  <Button href="./describe-fault" disabled={$errors['location_id'] !== ''}>Next</Button>  -->
+<!-- TODO building_id is optional right now  -->
+<Button href="./describe-fault" disabled={$errors['building_id'] !== ''}>Next</Button>

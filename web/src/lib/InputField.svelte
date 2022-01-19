@@ -95,7 +95,7 @@
 				<slot />
 			</span>
 		</span>
-        <!--  FIXME how to use multi bind:value?  -->
+        <!-- FIXME how to use multi bind:value?  -->
         <!--  on:input={handleChange}  -->
 		<div class="govuk__checkbox">
 			<input
@@ -104,7 +104,6 @@
 				{name}
 				on:input
 				on:change
-				bind:value={value}
 			/>
 			<span class="govuk__checkbox__tick" />
 		</div>

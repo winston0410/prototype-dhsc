@@ -10,14 +10,17 @@ const phoneRegExp =
 export const { form, state, handleChange, handleSubmit, errors, validateField } = createForm({
 	initialValues: {
 		'location_id': '',
-		'restricted-location': false,
+        // FIXME Is location_id the combination of site, building and floor?
+        'building_id': '',
+        'floor_id': '',
+		'restricted': false,
 		'restricted_access_description': "",
         'description': "",
         'name': "",
         'email': "",
         'asset_id': "",
         'phone': "",
-        'photo': null
+        'photo': "",
 	},
 	validationSchema: yup.object().shape({
 		name: yup.string().required(),
@@ -25,7 +28,11 @@ export const { form, state, handleChange, handleSubmit, errors, validateField } 
 		email: yup.string().email().required(),
 		phone: yup.string().matches(phoneRegExp, 'Phone number is not valid').required(),
 		description: yup.string().required(),
+        photo: yup.mixed().optional(),
 		'location_id': yup.string().required(),
+        'building_id': yup.string().optional(),
+        'floor_id': yup.string().optional(),
+		'restricted': yup.boolean().optional(),
 		'restricted_access_description': yup.string().optional(),
 	}),
 	onSubmit: (values) => {

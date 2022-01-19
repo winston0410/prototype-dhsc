@@ -2,31 +2,37 @@
 	import Button from '$lib/Button.svelte';
 	import InputField from '$lib/InputField.svelte';
 	import Separator from '$lib/Separator.svelte';
-	import { errors, validateFields } from '$lib/form';
-    import { onMount } from 'svelte';
+	import { form, errors, validateFields } from '$lib/form';
+	import { onMount } from 'svelte';
 </script>
 
 <script lang="ts">
-    onMount(async () => {
-        await validateFields(["location_id"])
-    })
+	onMount(async () => {
+		await validateFields(['location_id']);
+	});
+
+	const handleToggle = (e: Event) => {
+		const elem = e.target as HTMLInputElement;
+
+		form.update((prev) => {
+			return { ...prev, restricted: elem.checked };
+		});
+	};
 </script>
 
 <h1>Fault location – location ID</h1>
 
-<InputField
-	name={'location_id'}
-	type="text"
->
-	Location ID
-</InputField>
+<InputField name={'location_id'} type="text">Location ID</InputField>
 
 <Separator size={40} />
 
-<InputField name={'restricted-location'} type="checkbox">
+<InputField name={'restricted-location'} type="checkbox" on:input={handleToggle}>
 	Access to this location is restricted
 </InputField>
 
 <Separator size={40} />
 
-<Button href="./describe-fault" disabled={$errors["location_id"] !== ""}>Next</Button>
+<Button
+	href={$form.restricted ? './describe-restricted-access' : './describe-fault'}
+	disabled={$errors['location_id'] !== ''}>Next</Button
+>

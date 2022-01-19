@@ -16,7 +16,6 @@
 
 <Separator size={20} />
 
-<!-- FIXME textarea is buggy when using on:input, not sure why yet  -->
 <InputField
 	type="textarea"
 	name="description"
@@ -31,6 +30,6 @@
 
 <Separator size={40} />
 
-<Button href="/" disabled={$errors["restricted_access_description"] !== ""}>Next</Button>
+<Button href="./describe-fault" disabled={$errors["restricted_access_description"] !== ""}>Next</Button>
 
 <style lang="scss"></style>

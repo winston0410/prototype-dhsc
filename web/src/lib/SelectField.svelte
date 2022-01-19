@@ -29,8 +29,12 @@
 	}
 
 	const handleClear = (event: CustomEvent) => {
-		const { value, label } = event.detail;
-		console.log(value);
+        form.update((prev) => {
+            return {
+                ...prev,
+                [name]: ""
+            }
+        })
 	};
 </script>
 
@@ -38,6 +42,8 @@
 	<span class="govuk__label"><slot /></span>
 	<Select
 		{items}
+        on:select
+        on:clear
 		on:select={handleSelect}
 		on:clear={handleClear}
 		{placeholder}
@@ -52,6 +58,7 @@
 		display: block !important;
 		border: 2px solid $black !important;
 		background: $white !important;
+        cursor: text !important;
 	}
 
 	:global(.govuk__select .item, .govuk__select .clearSelect) {

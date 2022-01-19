@@ -30,6 +30,8 @@
         appearance: none;
         padding: 0;
         margin: 0;
+        outline: 0;
+        border: 0;
     }
         
     :global(input, textarea){
