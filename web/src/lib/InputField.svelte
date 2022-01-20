@@ -104,6 +104,7 @@
 				{name}
 				on:input
 				on:change
+                bind:checked={value}
 			/>
 			<span class="govuk__checkbox__tick" />
 		</div>

@@ -4,7 +4,7 @@ export const dummySiteData = [{
 }]
 
 export const dummyBuildingData = [
-    { value: '1', label: 'Building A' }
+    { value: '133422', label: 'Building A' }
 ]
 
 export default dummySiteData

@@ -10,14 +10,6 @@
 	onMount(async () => {
 		await validateFields(['location_id']);
 	});
-
-	const handleToggle = (e: Event) => {
-		const elem = e.target as HTMLInputElement;
-
-		form.update((prev) => {
-			return { ...prev, restricted: elem.checked };
-		});
-	};
 </script>
 
 <h1>Fault location – location ID</h1>
@@ -26,7 +18,7 @@
 
 <Separator size={40} />
 
-<InputField name={'restricted-location'} type="checkbox" on:input={handleToggle}>
+<InputField name={'restricted-location'} type="checkbox" bind:value={$form.restricted}>
 	Access to this location is restricted
 </InputField>
 

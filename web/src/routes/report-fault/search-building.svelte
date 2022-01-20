@@ -29,7 +29,7 @@
 
 <Separator size={40} />
 
-<InputField name={'floor_number'} type="number">Floor number</InputField>
+<InputField name={'floor_id'} type="number">Floor number</InputField>
 
 <Separator size={40} />
 

@@ -9,7 +9,7 @@
 
 <script lang="ts">
 	onMount(async () => {
-		await validateFields(['description']);
+		await validateFields(['service_description']);
 	});
 </script>
 
@@ -33,7 +33,7 @@
 
 <Separator size={32} />
 
-<InputField type="textarea" name="description">
+<InputField type="textarea" name="service_description">
 	<h2 class="govuk__text">Describe the service</h2>
 	<p class="govuk__remarks">Give accurate details of the service required</p>
 
@@ -42,6 +42,6 @@
 
 <Separator size={40} />
 
-<Button href="./fitting-details" disabled={$errors['description'] !== ''}>Next</Button>
+<Button href="./request-service-summary" disabled={$errors['service_description'] !== ''}>Next</Button>
 
 <style lang="scss"></style>

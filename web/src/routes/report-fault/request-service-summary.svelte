@@ -31,7 +31,7 @@
 </script>
 
 <!-- TODO Make the following fields dynamic with $form  -->
-<h1>Your fault report</h1>
+<h1>Your service request</h1>
 
 <Separator size={12} />
 
@@ -45,23 +45,21 @@
 
 <SummaryField
 	name={'Ward, clinic, department or area description'}
-	value={$form.description}
+	value={'abc'}
 	href={'./fill-location-id'}
 />
 
 <Separator size={12} />
 
-<SummaryField name={'Room number or description'} value={$form.description} href={'./fill-location-id'} />
+<SummaryField name={'Room number or description'} value={'abc'} href={'./fill-location-id'} />
 
 <Separator size={12} />
 
-<SummaryField name={'Photo'} value={$form.photo || "N/A"} href={'./upload-photo'} />
+<SummaryField name={'Photo'} value={'abc'} href={'./upload-photo'} />
 
 <Separator size={12} />
 
 <form on:submit={handleSubmit}>
 	<Separator size={20} />
 	<Button type="submit" disabled={!Object.values($errors).every((x) => x === '')}>Submit</Button>
-	<Separator size={20} />
-	<Button href="/email" disabled={!Object.values($errors).every((x) => x === '')}>Submit Via Email</Button>
 </form>
