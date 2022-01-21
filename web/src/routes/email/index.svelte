@@ -89,8 +89,8 @@
 	<div class="info-group">
 		<span>Location ID: {$form.location_id}</span>
 		<span>Asset ID: {$form.asset_id}</span>
-		<span>Site ID: {$form.building_id}</span>
-		<span>Floor: {$form.floor_id}</span>
+		<span>Site ID: {$form.building_id || "N/A"}</span>
+		<span>Floor: {$form.floor_id || "N/A"}</span>
 	</div>
 
 	<Separator size={28} />
