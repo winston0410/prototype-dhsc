@@ -1,5 +1,4 @@
 <script lang="ts" context="module">
-	import storage from 'svelte-use-local-storage';
 	import { handleChange, form } from '$lib/form';
 </script>
 
@@ -11,7 +10,6 @@
 </script>
 
 <!-- NOTE Cannot use dynamic name here, as bind:value has been used  -->
-<!--  use:storage={name}  -->
 {#if type === 'text'}
 	<label>
 		<span class="govuk__label">
